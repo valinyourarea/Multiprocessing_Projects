@@ -131,6 +131,7 @@ Execution time was measured with 1, 2, 3, 4, and 6 processes.
 - CPU workload.
 ### Potential improvements:
 - Optimization could be done using `concurrent.futures.ProcessPoolExecutor` or batch-processing strategies.
+- The number of parallel processes used.
 
 ## How to Use the Repo
 
@@ -158,6 +159,5 @@ python process_images.py
 
 ### 5. Review results:
 The script will process the images and apply filters in parallel. You can check the execution times and compare the serial vs parallel results.
-- The number of parallel processes used.
 
 
