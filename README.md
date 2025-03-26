@@ -161,7 +161,7 @@ The project requires a .tsv file containing image URLs. Ensure you have the phot
 ### 4. Run the script:
 Once the dataset is ready, you can run the script to download and process the images. Use the following command:
 ```bash
-python .py
+python downloader.py
 ```
 
 ### 5. Review results:
