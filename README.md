@@ -69,3 +69,69 @@ A try-except block is used to handle request errors and avoid interruptions.
 **Download Limit:**
 
 The function stops downloading images once the max_images limit (150) is reached.
+
+## Image Download and Processing Script
+**Code Execution**
+The main section of the script runs the functions:
+
+```python
+if __name__ == "__main__":
+    image_folder = "../images"  # Directory for storing images
+    
+    photos_df = load_photo_dataset(image_folder)
+    
+    if photos_df is not None:
+        image_paths = download_images(photos_df, image_folder)
+        print(f"Found {len(image_paths)} images for processing.")
+```
+# Explanation:
+**Defines the image storage directory:** image_folder is set to "../images".
+
+**Loads the image dataset:** The load_photo_dataset() function loads the dataset containing information about the images.
+
+**If images are available, it proceeds to download them:** The download_images() function handles the download.
+
+## Project Approach
+**Serial Implementation:**
+Images are downloaded and processed sequentially.
+
+Filters are applied one by one to all images.
+
+**Limitation:** It takes longer since it only uses a single CPU core.
+
+## Parallel Implementation:
+Uses multiprocessing.Pool to distribute tasks across multiple processes.
+
+Images are processed in parallel, reducing execution time.
+
+**Advantage:** Better CPU resource utilization.
+
+## Benchmarking Results
+
+Execution time was measured with 1, 2, 3, 4, and 6 processes.
+
+| Number of Processes | Execution Time (seconds) |
+|---------------------|--------------------------|
+| 1 process           | 64.00 s                   |
+| 2 processes         | 39.79 s                   |
+| 3 processes         | 33.02 s                   |
+| 4 processes         | 29.76 s                   |
+| 6 processes         | 28.70 s                   |
+
+*(Execution time depends on hardware and dataset size)*
+
+## Conclusions
+
+- **Multiprocessing improves performance**: The parallel implementation significantly reduced processing time compared to the serial version.
+
+- **Optimal number of processes varies**: Beyond a certain number of processes (usually equal to the number of CPU cores), performance stops improving due to task management overhead.
+
+### Factors affecting performance:
+- The number of images and their size.
+- CPU workload.
+- The number of parallel processes used.
+
+### Potential improvements:
+- Optimization could be done using `concurrent.futures.ProcessPoolExecutor` or batch-processing strategies.
+
+
