@@ -129,9 +129,35 @@ Execution time was measured with 1, 2, 3, 4, and 6 processes.
 ### Factors affecting performance:
 - The number of images and their size.
 - CPU workload.
-- The number of parallel processes used.
-
 ### Potential improvements:
 - Optimization could be done using `concurrent.futures.ProcessPoolExecutor` or batch-processing strategies.
+
+## How to Use the Repo
+
+To use this repository and run the parallel image processing pipeline, follow the steps below:
+
+### 1. Clone the repository:
+```bash
+git clone https://github.com/valinyourarea/Multiprocessing_Projects.git
+cd Multiprocessing_Projects
+```
+### 2. Install dependencies:
+Make sure you have python3 and pip installed. Then install the required dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Download the dataset:
+The project requires a .tsv file containing image URLs. Ensure you have the photos.tsv file in the images/ directory.
+
+### 4. Run the script:
+Once the dataset is ready, you can run the script to download and process the images. Use the following command:
+```bash
+python process_images.py
+```
+
+### 5. Review results:
+The script will process the images and apply filters in parallel. You can check the execution times and compare the serial vs parallel results.
+- The number of parallel processes used.
 
 
