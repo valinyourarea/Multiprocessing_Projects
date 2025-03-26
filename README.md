@@ -47,3 +47,25 @@ def load_photo_dataset(path='../images'):
         return None
     
     return df
+```
+
+## Explanation
+**Folder Creation:** The function ensures the image folder exists before downloading.
+
+**Iterating Over the Dataset:** The function loops through the photo_df DataFrame to extract photo_id and photo_image_url.
+
+**Downloading Images:**
+
+Each image is downloaded using requests.get().
+
+The image is saved locally using the photo_id as the filename.
+
+**Error Handling:**
+
+If an image URL is missing, the function skips that image.
+
+A try-except block is used to handle request errors and avoid interruptions.
+
+**Download Limit:**
+
+The function stops downloading images once the max_images limit (150) is reached.
