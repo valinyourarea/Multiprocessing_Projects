@@ -1,5 +1,12 @@
 # Parallel Image Processing Pipeline
 
+## Team members
+- Valeria Paredes
+- Damaris Pech
+- Ana Paula Ramírez
+- Joaquín Murguia
+- Damaris Dzul 
+
 ## Introduction  
 Image processing is a crucial task in computer vision, AI, and data analysis. However, applying filters to a large dataset of images can be computationally expensive.  
 
@@ -154,7 +161,7 @@ The project requires a .tsv file containing image URLs. Ensure you have the phot
 ### 4. Run the script:
 Once the dataset is ready, you can run the script to download and process the images. Use the following command:
 ```bash
-python process_images.py
+python .py
 ```
 
 ### 5. Review results:
